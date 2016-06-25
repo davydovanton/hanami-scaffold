@@ -27,9 +27,10 @@ Hanami::CliSubCommands::Generate.define_commands do
       invoke :help, ['scaffold']
     else
       ACTIONS.each do |action, method|
-        puts; say_status "Generate", "#{method} #{controller_name}##{action}"
+        say_status "Generate", "#{method} #{controller_name}##{action}"
         Hanami::CliSubCommands::Generate.new.invoke :actions,
           [application_name, "#{controller_name}##{action}"], method: method
+        puts
       end
     end
   end
