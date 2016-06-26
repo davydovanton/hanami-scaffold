@@ -21,8 +21,15 @@ Hanami::CliSubCommands::Generate.define_commands do
   option :only, type: :array
   option :expect, type: :array
   long_desc <<-EOS
+    `hanami generate scaffold` generates an an actions, views and templates along with specs and a routes.
+
+    For Application architecture the application name is 'app'. For Container architecture the default application is called 'web'.
+
+    > $ hanami generate scaffold cars
+
+    > $ hanami generate scaffold web cars
   EOS
-  def scaffold(application_name = nil, controller_name)
+  def scaffold(application_name = :app, controller_name)
     if options[:help]
       invoke :help, ['scaffold']
     else
