@@ -34,8 +34,10 @@ Hanami::CliSubCommands::Generate.define_commands do
       invoke :help, ['scaffold']
     else
       actions =
-        if options[:expect].any?
-          ACTIONS.dup.delete_if { |key, value| options[:expect].include? key }
+        if options[:expect] && options[:expect].any?
+          ACTIONS.dup.delete_if { |key, _| options[:expect].include?(key) }
+        elsif options[:only] && options[:only].any?
+          ACTIONS.dup.delete_if { |key, _| !options[:only].include?(key) }
         else
           ACTIONS
         end
