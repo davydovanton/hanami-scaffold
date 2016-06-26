@@ -9,12 +9,12 @@ end
 
 Hanami::CliSubCommands::Generate.define_commands do
   ACTIONS = {
-    index:  'GET',
-    new:    'GET',
-    create: 'POST',
-    edit:   'GET',
-    update: 'PUT',
-    delete: 'DELETE'
+    'index'  => 'GET',
+    'new'    => 'GET',
+    'create' => 'POST',
+    'edit'   => 'GET',
+    'update' => 'PUT',
+    'delete' => 'DELETE'
   }.freeze
 
   desc 'scaffold', 'Generate CRUD routes'
@@ -33,7 +33,14 @@ Hanami::CliSubCommands::Generate.define_commands do
     if options[:help]
       invoke :help, ['scaffold']
     else
-      ACTIONS.each do |action, method|
+      actions =
+        if options[:expect].any?
+          ACTIONS.dup.delete_if { |key, value| options[:expect].include? key }
+        else
+          ACTIONS
+        end
+
+      actions.each do |action, method|
         say_status "Generate", "#{method} #{controller_name}##{action}"
         Hanami::CliSubCommands::Generate.new.invoke :actions,
           [application_name, "#{controller_name}##{action}"], method: method
