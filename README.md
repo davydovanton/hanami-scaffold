@@ -1,6 +1,6 @@
 # Hanami::Scaffold
 Why?
-Because I waht to generate crud actions in one command.
+Because I what to generate crud actions in one command.
 
 ## Installation
 Add this line to your application's Gemfile:
