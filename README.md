@@ -33,9 +33,9 @@ $ bundle exec hanami generate action [app] [controller]#update --method=put
 $ bundle exec hanami generate action [app] [controller]#delete --method=destroy
 ```
 
-### Supported command [WIP]
-#### `--expect`
-#### `--only`
+### Supported command
+* `--expect`
+* `--only`
 
 ## Contributing
 
