@@ -28,6 +28,8 @@ Hanami::CliSubCommands::Generate.define_commands do
     > $ hanami generate scaffold cars
 
     > $ hanami generate scaffold web cars
+
+    > $ hanami generate scaffold web cars --only index new create show
   EOS
   def scaffold(application_name = :app, controller_name)
     if options[:help]
