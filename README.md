@@ -28,14 +28,37 @@ It's a equivalent of this commands:
 $ bundle exec hanami generate action [app] [controller]#index
 $ bundle exec hanami generate action [app] [controller]#new
 $ bundle exec hanami generate action [app] [controller]#create --method=post
+$ bundle exec hanami generate action [app] [controller]#show
 $ bundle exec hanami generate action [app] [controller]#edit
 $ bundle exec hanami generate action [app] [controller]#update --method=put
 $ bundle exec hanami generate action [app] [controller]#delete --method=destroy
 ```
 
 ### Supported command
-* `--expect`
-* `--only`
+#### `--expect`
+Just call:
+```
+$ bundle exec hanami generate scaffold [app] [controller] --expect=delete update edit
+```
+
+It's a equivalent of this commands:
+```
+$ bundle exec hanami generate action [app] [controller]#index
+$ bundle exec hanami generate action [app] [controller]#new
+$ bundle exec hanami generate action [app] [controller]#create --method=post
+```
+
+#### `--only`
+Just call:
+```
+$ bundle exec hanami generate scaffold [app] [controller] --only=index show
+```
+
+It's a equivalent of this commands:
+```
+$ bundle exec hanami generate action [app] [controller]#index
+$ bundle exec hanami generate action [app] [controller]#show
+```
 
 ## Contributing
 
