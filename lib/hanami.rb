@@ -19,7 +19,7 @@ Hanami::CliSubCommands::Generate.define_commands do
 
   desc 'scaffold', 'Generate CRUD routes'
   option :only, type: :array
-  option :expect, type: :array
+  option :except, type: :array
   long_desc <<-EOS
     `hanami generate scaffold` generates an an actions, views and templates along with specs and a routes.
 
@@ -36,8 +36,8 @@ Hanami::CliSubCommands::Generate.define_commands do
       invoke :help, ['scaffold']
     else
       actions =
-        if options[:expect] && options[:expect].any?
-          ACTIONS.dup.delete_if { |key, _| options[:expect].include?(key) }
+        if options[:except] && options[:except].any?
+          ACTIONS.dup.delete_if { |key, _| options[:except].include?(key) }
         elsif options[:only] && options[:only].any?
           ACTIONS.dup.delete_if { |key, _| !options[:only].include?(key) }
         else

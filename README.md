@@ -35,10 +35,10 @@ $ bundle exec hanami generate action [app] [controller]#delete --method=destroy
 ```
 
 ### Supported command
-#### `--expect`
+#### `--except`
 Just call:
 ```
-$ bundle exec hanami generate scaffold [app] [controller] --expect=delete update edit
+$ bundle exec hanami generate scaffold [app] [controller] --except=delete update edit
 ```
 
 It's a equivalent of this commands:
