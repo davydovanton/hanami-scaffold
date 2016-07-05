@@ -27,14 +27,14 @@ It's a equivalent of this commands:
 ```
 $ bundle exec hanami generate action [app] [controller]#index
 $ bundle exec hanami generate action [app] [controller]#new
-$ bundle exec hanami generate action [app] [controller]#create --method=post
+$ bundle exec hanami generate action [app] [controller]#create
 $ bundle exec hanami generate action [app] [controller]#show
 $ bundle exec hanami generate action [app] [controller]#edit
-$ bundle exec hanami generate action [app] [controller]#update --method=put
-$ bundle exec hanami generate action [app] [controller]#delete --method=destroy
+$ bundle exec hanami generate action [app] [controller]#update
+$ bundle exec hanami generate action [app] [controller]#delete
 ```
 
-### Supported command
+### Supported commands
 #### `--except`
 Just call:
 ```
@@ -45,7 +45,7 @@ It's a equivalent of this commands:
 ```
 $ bundle exec hanami generate action [app] [controller]#index
 $ bundle exec hanami generate action [app] [controller]#new
-$ bundle exec hanami generate action [app] [controller]#create --method=post
+$ bundle exec hanami generate action [app] [controller]#create
 ```
 
 #### `--only`
