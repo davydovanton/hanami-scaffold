@@ -2,6 +2,8 @@
 Why?
 Because I what to generate crud actions in one command.
 
+__Sorry, but this gem doesn't work with 0.9 version of hanami. Please be attention.__
+
 ## Installation
 Add this line to your application's Gemfile:
 
