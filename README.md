@@ -1,8 +1,6 @@
 # Hanami::Scaffold
 Why?
-Because I what to generate crud actions in one command.
-
-__Sorry, but this gem doesn't work with 0.9 version of hanami. Please be attention.__
+Because I want to generate crud actions in one command.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -13,53 +11,57 @@ gem 'hanami-scaffold', group: :development
 
 And then execute:
 
-    $ bundle
+    $ bundle binstubs hanami
 
-Or install it yourself as:
+And add `require "hanami-scaffold"` in bin/hanami before `load Gem.bin_path("hanami", "hanami")`:
 
-    $ gem install hanami-scaffold
+```ruby
+...
+require "hanami-scaffold"
+load Gem.bin_path("hanami", "hanami")
+```
 
 ## Usage
 Just call:
 ```
-$ bundle exec hanami generate scaffold [app] [controller]
+$ bin/hanami generate scaffold [app] [controller]
 ```
 
 It's a equivalent of this commands:
 ```
-$ bundle exec hanami generate action [app] [controller]#index
-$ bundle exec hanami generate action [app] [controller]#new
-$ bundle exec hanami generate action [app] [controller]#create
-$ bundle exec hanami generate action [app] [controller]#show
-$ bundle exec hanami generate action [app] [controller]#edit
-$ bundle exec hanami generate action [app] [controller]#update
-$ bundle exec hanami generate action [app] [controller]#delete
+$ bin/hanami generate action [app] [controller]#index
+$ bin/hanami generate action [app] [controller]#new
+$ bin/hanami generate action [app] [controller]#create
+$ bin/hanami generate action [app] [controller]#show
+$ bin/hanami generate action [app] [controller]#edit
+$ bin/hanami generate action [app] [controller]#update
+$ bin/hanami generate action [app] [controller]#delete
 ```
 
 ### Supported commands
 #### `--except`
 Just call:
 ```
-$ bundle exec hanami generate scaffold [app] [controller] --except=delete update edit
+$ bin/hanami generate scaffold [app] [controller] --except=delete update edit
 ```
 
 It's a equivalent of this commands:
 ```
-$ bundle exec hanami generate action [app] [controller]#index
-$ bundle exec hanami generate action [app] [controller]#new
-$ bundle exec hanami generate action [app] [controller]#create
+$ bin/hanami generate action [app] [controller]#index
+$ bin/hanami generate action [app] [controller]#new
+$ bin/hanami generate action [app] [controller]#create
 ```
 
 #### `--only`
 Just call:
 ```
-$ bundle exec hanami generate scaffold [app] [controller] --only=index show
+$ bin/hanami generate scaffold [app] [controller] --only=index show
 ```
 
 It's a equivalent of this commands:
 ```
-$ bundle exec hanami generate action [app] [controller]#index
-$ bundle exec hanami generate action [app] [controller]#show
+$ bin/hanami generate action [app] [controller]#index
+$ bin/hanami generate action [app] [controller]#show
 ```
 
 ## Contributing
@@ -70,4 +72,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/davydo
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
