@@ -24,7 +24,7 @@ Hanami::CliSubCommands::Generate.define_commands do
   option :only, type: :array
   option :except, type: :array
   long_desc <<-EOS
-    `hanami generate scaffold` generates an an actions, views and templates along with specs and a routes.
+    `hanami generate scaffold` generates an actions, views and templates along with specs and a routes.
 
     For Application architecture the application name is 'app'. For Container architecture the default application is called 'web'.
 
