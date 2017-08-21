@@ -15,6 +15,7 @@ Hanami::CliSubCommands::Generate.define_commands do
     'new'    => 'GET',
     'create' => 'POST',
     'edit'   => 'GET',
+    'show'   => 'GET',
     'update' => 'PUT',
     'delete' => 'DELETE'
   }.freeze
